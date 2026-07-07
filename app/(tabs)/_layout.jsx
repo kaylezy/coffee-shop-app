@@ -3,12 +3,11 @@ import { Image, View } from "react-native";
 
 const TabsLayout = () => {
   const TabIcon = ({ name, focused }) => {
-    // Choose icon based on tab name
     const icons = {
       home: require("../../assets/icons/Library-Home.png"),
       heart: require("../../assets/icons/Library-Heart.png"),
       bag: require("../../assets/icons/Library-Bag.png"),
-      notification: require("../../assets/icons/Library-Notification.png"),
+      profile: require("../../assets/icons/Profile.png"),
     };
 
     return (
@@ -28,7 +27,6 @@ const TabsLayout = () => {
               width: 15,
               backgroundColor: "#C67C4E",
               borderRadius: 3,
-              
             }}
           />
         )}
@@ -40,6 +38,7 @@ const TabsLayout = () => {
     <Tabs
       screenOptions={{
         headerShown: false,
+        headerTintColor: "#000",
         tabBarShowLabel: false,
         tabBarStyle: {
           backgroundColor: "#FFFFFF",
@@ -73,10 +72,10 @@ const TabsLayout = () => {
         }}
       />
       <Tabs.Screen
-        name="notification"
+        name="profile"
         options={{
           tabBarIcon: ({ focused }) => (
-            <TabIcon name="notification" focused={focused} />
+            <TabIcon name="profile" focused={focused} />
           ),
         }}
       />

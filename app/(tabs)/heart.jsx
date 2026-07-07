@@ -3,6 +3,7 @@ import { View, Text, Image, StyleSheet, TouchableOpacity } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 const Heart = () => {
+  
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.content}>

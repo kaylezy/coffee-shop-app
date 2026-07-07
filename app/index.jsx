@@ -26,7 +26,7 @@ export default function Index() {
           style={{ width: "75%" }}
           text={"Get Started"}
           onPress={() => {
-            router.push("./home");
+            router.push("/loginScreen");
           }}
         />
       </View>
@@ -56,6 +56,7 @@ const styles = StyleSheet.create({
   content: {
     // paddingHorizontal: 5,
     paddingBottom: 30,
+    
   },
   title: {
     color: "white",
@@ -63,11 +64,13 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     textAlign: "center",
     marginBottom: 20,
+    fontFamily: 'bold',
   },
   subtitle: {
     color: "#ccc",
     fontSize: 18,
     textAlign: "center",
     marginBottom: 30,
+    fontFamily: 'regular',
   },
 });

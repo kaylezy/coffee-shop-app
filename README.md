@@ -1,50 +1,98 @@
-# Welcome to your Expo app 👋
+# ☕ Coffee Shop Mobile App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A modern, user-friendly mobile application built with React Native and Expo for discovering, ordering, and tracking coffee orders. The app features secure user authentication, personalized user profiles, and a seamless shopping experience.
 
-## Get started
+## 🚀 User Guide
 
-1. Install dependencies
+### 1️⃣ Welcome Screen
 
-   ```bash
-   npm install
-   ```
+When you first open the app, you'll see the **Welcome Screen** with:
 
-2. Start the app
+- Beautiful coffee shop branding image
+- App tagline: "Fall in Love with Coffee in Blissful Delight!"
+- **"Get Started"** button to begin
 
-   ```bash
-   npx expo start
-   ```
+**Action:** Tap the **"Get Started"** button to proceed.
 
-In the output, you'll find options to open the app in a
+---
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+### 2️⃣ Authentication Screens
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+#### **Sign Up (New Users)**
 
-## Get a fresh project
+1. Tap **"Don't have an account? Sign Up"** on the login screen
+2. Fill in the registration form:
+   - **Full Name** - Your complete name
+   - **Email** - Your email address
+   - **Password** - Create a secure password
+   - **Confirm Password** - Re-enter your password
+   - Check the **"I agree to terms and conditions"** checkbox
+3. Tap **"Register"**
+4. Wait for account creation confirmation
+5. Go to your email to confirm your account or else it will not display your information, until you confirm your email and login again.
 
-When you're ready, run:
+#### **Login (Existing Users)**
 
-```bash
-npm run reset-project
+1. On the login screen, enter:
+   - **Email** - Your registered email
+   - **Password** - Your account password
+   - Optionally check **"Remember me"**
+2. Tap **"Login"**
+3. Wait for authentication
+
+---
+
+### 3️⃣ Onboarding Screen
+
+After successful registration or login, you'll see the **Onboarding Screen** displaying:
+
+- Welcome message
+- Your **full name** (as registered)
+- Your **email address**
+- Brief introduction to the app features
+
+**Action:** Tap **"Continue to Home"** button to access the main app.
+
+1. Tap the **👤 Profile** tab (rightmost icon)
+2. View your profile information:
+   - Avatar with initials
+   - Full Name
+   - Email Address
+   - Account Status (Active)
+
+```
+Welcome Screen
+     ↓
+┌────────────────┐
+│   Login/Signup │
+└────────────────┘
+     ↓
+  Onboarding Screen (User Details)
+     ↓
+  Home Screen (Main App)
+     ↓
+  Protected Routes (Favorites, Bag, Profile, Orders)
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+### Session Management
 
-## Learn more
+- User authentication managed by **Supabase Auth**
+- Session persists across app restarts using **AsyncStorage**
+- Automatic login check on app startup
+- Logout clears session and returns to welcome screen
 
-To learn more about developing your project with Expo, look at the following resources:
+---
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+## 💾 Technologies Used
 
-## Join the community
+- **React Native** - Mobile app framework
+- **Expo** - Development platform and deployment tool
+- **Expo Router** - File-based routing for React Native
+- **Supabase** - Backend-as-a-service for authentication
+- **AsyncStorage** - Local data persistence
+- **React Context API** - State management for auth
+- **react-native-safe-area-context** - Safe area handling
+- **expo-checkbox** - Checkbox component
+- **Expo Vector Icons** - Icon library
 
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+---

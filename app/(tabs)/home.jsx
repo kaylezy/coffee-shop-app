@@ -21,7 +21,7 @@ const Home = () => {
     <SafeAreaView style={styles.container}>
       <View
         style={{
-          backgroundColor: "#F9F2ED",
+          backgroundColor: "",
           position: "absolute",
           left: 0,
           right: 0,
