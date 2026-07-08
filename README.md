@@ -14,7 +14,7 @@ When you first open the app, you'll see the **Welcome Screen** with:
 
 **Action:** Tap the **"Get Started"** button to proceed.
 
-- Click this link to check the video of the app in real time: [[Coffee App Video](https://drive.google.com/file/d/1rfaCkBSQkEw95x2BOKYQ3lT93bFZYFrp/view)]
+- Click this link to check the video of the app in real time: [Watch the demo](https://drive.google.com/file/d/1rfaCkBSQkEw95x2BOKYQ3lT93bFZYFrp/view)
 
 ---
 
