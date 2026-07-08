@@ -15,18 +15,19 @@ const CustomTextInput = ({
   keyboardType,
   onTextChange,
 }) => {
-  const [visible, setVisible] = useState(true);
-
-  // console.log(visible);
-
+  const [visible, setVisible] = useState(false);
   const { width } = Dimensions.get("screen");
+
+  const isPasswordField = label
+    .toLowerCase()
+    .includes("password" || "confirmPassword");
+
   return (
     <View style={styles.container}>
       <View style={{ gap: 10 }}>
         <Text style={styles.label}>{label}</Text>
-
         <TextInput
-          secureTextEntry={!visible}
+          secureTextEntry={isPasswordField && !visible}
           style={{ width: width * 0.7 }}
           keyboardType={keyboardType}
           placeholder={placeHolder}
@@ -36,25 +37,19 @@ const CustomTextInput = ({
           }}
         />
       </View>
-
-      <View>
-        {label.toLowerCase() === "password" ?  (
-          <Pressable
-            onPress={() => {
-              setVisible(!visible);
-            }}
-          >
-            {visible ? (
-                <Entypo name="eye-with-line" size={24} color="#C67C4E" />
-            ) : (
-           
-              
-              <Entypo name="eye" size={24} color="#C67C4E" /> 
-            )}
-          </Pressable>
-        ) : null}
-      </View>
-      
+      {isPasswordField && (
+        <Pressable
+          onPress={() => {
+            setVisible(!visible);
+          }}
+        >
+          {visible ? (
+            <Entypo name="eye" size={24} color="#C67C4E" />
+          ) : (
+            <Entypo name="eye-with-line" size={24} color="#C67C4E" />
+          )}
+        </Pressable>
+      )}
     </View>
   );
 };
@@ -63,7 +58,7 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: "white",
     borderRadius: 20,
-    borderColor: '#C67C4E',
+    borderColor: "#C67C4E",
     borderWidth: 1,
     height: 61,
     paddingHorizontal: 16,
@@ -75,7 +70,7 @@ const styles = StyleSheet.create({
   label: {
     color: "black",
     fontSize: 15,
-    fontWeight: "semibold",
+    fontWeight: "600",
   },
 });
 

@@ -19,8 +19,8 @@ export default function Index() {
           Fall in Love with {"\n"} Coffee in Blissful Delight!
         </Text>
         <Text style={styles.subtitle}>
-          Welcome to our cozy coffee corner, where {"\n"} every cup is a
-          delightful for you.
+          Welcome to kng&apos;kay coffee corner, where {"\n"} every cup is a
+          delightful taste for you.
         </Text>
         <CustomButton
           style={{ width: "75%" }}
@@ -56,21 +56,19 @@ const styles = StyleSheet.create({
   content: {
     // paddingHorizontal: 5,
     paddingBottom: 30,
-    
   },
   title: {
     color: "white",
     fontSize: 45,
-    fontWeight: "bold",
     textAlign: "center",
     marginBottom: 20,
-    fontFamily: 'bold',
+    fontFamily: "black",
   },
   subtitle: {
     color: "#ccc",
     fontSize: 18,
     textAlign: "center",
     marginBottom: 30,
-    fontFamily: 'regular',
+    fontFamily: "medium",
   },
 });

@@ -40,15 +40,20 @@ const SignupScreen = () => {
     setLoading(true);
     try {
       await register(fullName, email, password);
-      Alert.alert("Success", "Account created successfully! Check your email for account verification.", [
-        {
-          text: "OK",
-          onPress: () =>
-            router.replace(
-              "/onboardingScreen?email=" + encodeURIComponent(email),
-            ),
-        },
-      ]);
+      Alert.alert(
+        "Success",
+        "Account created successfully! Check your email for account verification.",
+        [
+          {
+            text: "OK",
+            onPress: () =>
+              router.replace(
+                // "/onboardingScreen?email=" + encodeURIComponent(email),
+                "/loginScreen?email=" + encodeURIComponent(email),
+              ),
+          },
+        ],
+      );
     } catch (authError) {
       Alert.alert(
         "Registration Failed",
@@ -102,6 +107,7 @@ const SignupScreen = () => {
 
           <CustomTextInput
             label={"Password"}
+            secureTextEntry={true}
             placeHolder={"Enter your password"}
             onTextChange={(value) => {
               setPassword(value);
@@ -110,6 +116,7 @@ const SignupScreen = () => {
 
           <CustomTextInput
             label={"Confirm Password"}
+            secureTextEntry={true}
             placeHolder={"Confirm your password"}
             onTextChange={(value) => {
               setConfirmPassword(value);

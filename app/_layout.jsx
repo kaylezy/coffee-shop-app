@@ -1,10 +1,10 @@
 import { useFonts } from "expo-font";
 import { Stack } from "expo-router";
-import { ActivityIndicator, View } from "react-native";
+import { ActivityIndicator, View, useColorScheme } from "react-native";
 import { AuthProvider, useAuth } from "../context/AuthContext";
 
 function RootLayoutContent() {
-  const [loaded, error] = useFonts({
+  const [loaded] = useFonts({
     regular: require("../assets/font/Merienda/static/Merienda-Regular.ttf"),
     light: require("../assets/font/Merienda/static/Merienda-Light.ttf"),
     medium: require("../assets/font/Merienda/static/Merienda-Medium.ttf"),
@@ -14,11 +14,10 @@ function RootLayoutContent() {
     black: require("../assets/font/Merienda/static/Merienda-Black.ttf"),
   });
 
-  console.log(loaded, error);
-
   const { user, initializing } = useAuth();
+  const scheme = useColorScheme();
 
-  if (initializing) {
+  if (!loaded || initializing) {
     return (
       <View
         style={{
@@ -28,7 +27,7 @@ function RootLayoutContent() {
           backgroundColor: "#C67C4E",
         }}
       >
-        <ActivityIndicator size="large" color="white" />
+        <ActivityIndicator size="large" color="#fff" />
       </View>
     );
   }
@@ -37,7 +36,13 @@ function RootLayoutContent() {
     <Stack
       screenOptions={{
         headerShown: false,
-        headerTintColor: "#000",
+        headerStyle: {
+          backgroundColor: scheme === "dark" ? "#000" : "#fff",
+        },
+        headerTintColor: scheme === "dark" ? "#fff" : "#000",
+        headerTitleStyle: {
+          fontFamily: "bold",
+        },
       }}
     >
       {!user ? (
@@ -51,10 +56,9 @@ function RootLayoutContent() {
           <Stack.Screen name="details" />
           <Stack.Screen name="delivery" />
           <Stack.Screen name="order" />
+          <Stack.Screen name="onboardingScreen" />
         </>
       )}
-
-      {user && <Stack.Screen name="onboardingScreen" />}
     </Stack>
   );
 }
